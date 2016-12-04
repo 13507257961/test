@@ -1,37 +1,55 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8">
-<link href="css/popBox.css" rel="stylesheet" type="text/css">
- <title>拖拽弹出框</title>
-</head>
-<body>
-	<div class="boxs">
-		<div class="btns">
-			<button class="open btn" id="open-up">
-			点击弹出框
-			</button>
-		</div>
-	</div>
-	<div class="dialog-box" style="display:none;"></div>
-</body>
-<script src="js/jquery-1.8.2.min.js"></script>
-<script src="js/popBox.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jquery打字动画效果</title>
+
+<link href="css/animate.css" rel="stylesheet">
+
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.lettering.js"></script>
+<script src="js/jquery.textillate.js"></script>
+<script type="text/javascript" src="js/jquery.fireworks.js"></script>
 <script>
-	$(function(){
-		$("#open-up").click(function(){
-				var $d = $(".dialog-box");
-			$d.dialog_1({
-				title:"登陆", 	//标题
-				dragable:true,  //状态
-				html:'',  		//html 模版
-				width:400,      //宽度
-				height:200,    //高度
-				cannelText:'取消', //取消text
-				confirmText:"确认", //确认text
-				showFooter:true, 
-			}).open();
-		});
+$(function () {
+	$('.text1').textillate({ in: { effect: 'rollIn' } });
+	$('.text2').textillate({
+		initialDelay: 1000, 	//设置动画开始时间
+		in: { effect: 'flipInX'	//设置动画名称
+		}
 	});
+	$('.text3').textillate({
+		initialDelay: 9000,
+		in: { effect: 'bounceInDown' }
+	});
+		$('.jq22').fireworks({ 
+		  sound: false, // sound effect
+		  opacity: 0.9, 
+		  width: '100%', 
+		  height: '100%' 
+		});
+})
+
 </script>
+<style type="text/css">
+div {width:960px;margin:0 auto;}
+.text1,.text2,.text3 {visibility:hidden;}
+.text1,.text2 {color:#fff;color:#fff;}
+.text1 {margin:50px;text-align:center;font-size:30px;text-shadow:0.025em 0.025em 0.025em rgba(0, 0, 0, 0.8);}
+.text2 {font-family:microsoft yahei;font-size:14px;line-height:24px;text-shadow:0.1em 0.1em 0.1em rgba(0, 0, 0, 0.8)}
+.text3 {font-family:microsoft yahei;text-align:center;font-size:36px;color:#A7A281;}
+</style>
+<body>
+<div class="jq22">
+		
+	</div>
+<div>
+	<p class="text1">L o V e</p>
+	<p class="text2">柳微傻 柳微傻 柳微傻 柳微傻 柳微傻 柳微傻 柳微傻 柳微傻 柳微傻 柳微傻 柳微傻 柳微傻 柳微傻 柳微傻 柳微傻 </p>
+	<p class="text3">Ab@你别皱眉</p>
+</div>
+
+</body>
 </html>
